@@ -1,0 +1,23 @@
+* Inbox
+* Cablaggi
+ - Rosso => Volt
+ - Nero => Ground
+ - Verde => Trigger
+ - Blu => Echo Centrale
+ - Viola => Echo Destra
+ - Violetto => En2 Motore destro
+ - Bianco => Echo Sinistra
+ - Giallo => En1 Motore Sinistro
+ - Blu => En2 Motore Sinistro
+ - Grigio => En1 Motore Destro
+ - Arancione => Enab Motori
+* Pin Map
+ - D0 => Trigger (OUT)
+ - D1 => Echo centrale (IN)
+ - D2 => Echo Destra (IN)
+ - D3 => En2 Motore destro (se a 1 mentre en1 0 va in retro) (OUT)
+ - D4 => Echo sinistra (IN)
+ - D5 => En1 Motore sinistro (se a 1 mentre en 2 0 va avanti) (OUT)
+ - D6 => En2 motore sinistro (tale quale D3) (OUT)
+ - D7 => En1 motore destro (tale quale D5) (OUT)
+ - D4 => Interrupt (si spera)
