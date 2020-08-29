@@ -6,6 +6,10 @@ void handle_serial() {
     String msg = Serial1.readStringUntil("\n");
     msg.trim();
     Serial.print("Received message: " + msg + "\n");
-    enabled = msg.equals("en");
+    if(msg.equals("en")){
+      enabled = true;
+    } else if(msg.equals("dis")){
+      enabled = false;
+    }
   } 
 }

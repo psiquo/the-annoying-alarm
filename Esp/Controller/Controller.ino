@@ -1,5 +1,7 @@
 #include "Constants.h"
 
+bool led = true;
+
 void log_msg(String msg) {
   Serial.println(msg);
   mqtt_print(msg);
@@ -8,6 +10,7 @@ void log_msg(String msg) {
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
+  pinMode(LED_BUILTIN,OUTPUT);
   setup_wifi();
   setup_time();
   setup_alarm();
@@ -26,5 +29,6 @@ void loop() {
   } else {    
     digitalWrite(alarmPin,LOW);
   }
+  digitalWrite(LED_BUILTIN,led = not led);
   delay(1000);
 }

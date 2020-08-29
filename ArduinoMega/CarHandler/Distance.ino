@@ -1,5 +1,3 @@
-#include <stdlib.h>
-
 void setup_dist() {
   pinMode(trigPin,OUTPUT);
   for (int i = 0; i < sensors; i++){
@@ -49,7 +47,7 @@ int get_dist(int dir) {
 void update_dist() {
   for (int i = 0; i < sensors; i++){
     oldDistance[i] = distance[i];
-    distance[i] = read_dist(i);
+    distance[i] = get_dist(i);
     delay(10);
   }
 }

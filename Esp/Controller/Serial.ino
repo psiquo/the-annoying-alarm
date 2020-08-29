@@ -8,6 +8,6 @@ void handle_serial() {
     String(comMsg + "\n").toCharArray(tmp,100);
     s.write(tmp);
     sendCom = false;
-    mqtt_print("Sent message through serial " + comMsg);
+    log_msg("Sent message through serial " + comMsg);
   }
 }

@@ -1,30 +1,30 @@
-#include "L298N.h"
-
-L298N Left(enabMotor, LIn1, LIn2);
-L298N Right(enabMotor,RIn1,RIn2);
-
 void setup_motor() {
-  pinMode(enabMotor,OUTPUT);
+   pinMode(REnab,OUTPUT);
+  pinMode(LEnab,OUTPUT);
   pinMode(LIn1, OUTPUT);
   pinMode(LIn2, OUTPUT);
   pinMode(RIn1, OUTPUT);
   pinMode(RIn1, OUTPUT);
+
+  fw_pid.SetOutputLimits(MIN_SPEED,MAX_SPEED);
+  fw_pid.SetMode(AUTOMATIC);
+  fw_pid.SetSampleTime(20);
+  
 }
 
-void set_speed(int speed_val){
+void set_speed(double speed_val){
   Left.setSpeed(speed_val);
-  Right.setSpeed(speed_val);
+  Right.setSpeed(min(speed_val + 50,255));
 }
 
-void go(int speed_val) {
-
-  set_speed(speed_val); 
+void go() {
+  set_speed(output_speed); 
 
   Left.forward();
   Right.forward();
 }
 
-void left(int speed_val){
+void left(double speed_val){
    set_speed(speed_val);
 
    Left.backward();
@@ -32,7 +32,7 @@ void left(int speed_val){
 }
 
 
-void right(int speed_val){
+void right(double speed_val){
    set_speed(speed_val);
 
    Left.forward();
