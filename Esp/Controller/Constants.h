@@ -36,8 +36,9 @@ NTPClient timeClient(ntpUDP, "it.pool.ntp.org", utcOffsetInSeconds);
 
 //Alarm Module
 //---Pins
-const int alarmPin = D1;
-const int interruptPin = D2;
+
+/* const int */ #define alarmPin  D1
+/* const int */ #define interruptPin  D2
 
 //MQTT
 //---Includes
@@ -53,8 +54,11 @@ PubSubClient client_mqtt(mqtt_wifi);
 //Serial Module
 //---Includes
 #include <SoftwareSerial.h>
+//---Pins
+#define txPin D5
+#define rxPin D6
 //---Values
-SoftwareSerial s(D5,D6);
+SoftwareSerial s(txPin, rxPin);
 bool sendCom = false;
 String comMsg = "";
 

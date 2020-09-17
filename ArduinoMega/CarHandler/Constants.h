@@ -2,7 +2,7 @@
 //---Includes
 #include <stdlib.h>
 // --- Pins
-const int trigPin = 23;
+/*const int*/ #define trigPin 23
 const int echo[] = {22,24,26};
 
 // --- Values
@@ -19,12 +19,12 @@ int measures = 4;
 #include "L298N.h"
 #include <PID_v1.h>
 //---Pins
-const int LEnab = 2;
-const int REnab = 3;
-const int LIn1 = 44;
-const int LIn2 = 45;
-const int RIn1 = 46;
-const int RIn2 = 47;
+/* const int */ #define LEnab  2
+/* const int */ #define REnab  3
+/* const int */ #define LIn1 44
+/* const int */ #define LIn2 45
+/* const int */ #define RIn1 46
+/* const int */ #define RIn2 47
 
 //---Values
 #define MAX_SPEED 200
